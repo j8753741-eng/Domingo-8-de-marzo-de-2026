@@ -99,38 +99,43 @@ to{opacity:1}
 }
 
   #nameTitle{
-    font-family: 'Great Vibes', cursive;
-    font-size: 32px;
-    margin-top: 10px;
-    
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 8px;
+
     background: linear-gradient(
         90deg,
-        #6a00ff,
-        #b266ff,
-        #ffffff,
-        #b266ff,
-        #6a00ff
+        #4b0082,
+        #7b2cff,
+        #c084ff,
+        #7b2cff,
+        #4b0082
     );
-    
-    background-size: 300%;
+
+    background-size: 200%;
+    background-clip: text;
     -webkit-background-clip: text;
+
+    color: transparent;
     -webkit-text-fill-color: transparent;
-    
-    animation: metallicPurple 5s linear infinite;
-    
+
     text-shadow:
-        0 0 5px rgba(178,102,255,0.8),
-        0 0 10px rgba(138,43,226,0.7),
-        0 0 20px rgba(106,0,255,0.6);
+        0 0 4px rgba(123,44,255,0.6),
+        0 0 10px rgba(75,0,130,0.4);
+
+    animation: purpleMetal 6s linear infinite;
   }
-  @keyframes metallicPurple {
+
+  @keyframes purpleMetal{
     0%{
         background-position: 0%;
     }
     100%{
-        background-position: 300%;
+        background-position: 200%;
     }
   } 
+  
   
 button{
 margin-top:40px;
