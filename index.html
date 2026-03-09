@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Ti ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Georgia',serif;
+background:radial-gradient(circle at top,#1a001a,#000);
+color:white;
+overflow-x:hidden;
+}
+
+/* ESTRELLAS */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+opacity:0.6;
+animation:starsMove 80s linear infinite;
+z-index:-1;
+}
+
+@keyframes starsMove{
+from{transform:translateY(0)}
+to{transform:translateY(-1200px)}
+}
+
+/* PETALOS */
+
+.petal{
+position:fixed;
+top:-10px;
+font-size:22px;
+animation:fall linear infinite;
+opacity:0.9;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px) rotate(0deg)}
+100%{transform:translateY(110vh) rotate(360deg)}
+}
+
+/* CORAZONES */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:18px;
+animation:float 12s linear infinite;
+opacity:0.6;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
+}
+
+/* INTRO */
+
+.intro{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.title{
+font-size:50px;
+color:#ff4da6;
+text-shadow:
+0 0 10px #ff4da6,
+0 0 25px #ff4da6,
+0 0 50px #ff1a8c;
+opacity:0;
+animation:neon 3s forwards;
+}
+
+@keyframes neon{
+to{opacity:1}
+}
+
+.subtitle{
+margin-top:15px;
+font-size:20px;
+opacity:0.8;
+}
+
+button{
+margin-top:40px;
+padding:16px 45px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:#ff4da6;
+color:white;
+cursor:pointer;
+box-shadow:0 0 25px #ff4da6;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 40px #ff4da6;
+}
+
+/* SOBRE */
+
+.envelope{
+display:none;
+justify-content:center;
+align-items:center;
+height:100vh;
+animation:fade 2s;
+}
+
+.envelopeBox{
+width:250px;
+height:170px;
+background:#ff4da6;
+border-radius:6px;
+position:relative;
+}
+
+.envelopeBox:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+border-left:125px solid transparent;
+border-right:125px solid transparent;
+border-bottom:85px solid #ff80bf;
+}
+
+/* CARTA */
+
+.letter{
+display:none;
+max-width:900px;
+margin:auto;
+padding:70px;
+line-height:1.9;
+font-size:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border-radius:25px;
+box-shadow:0 0 45px rgba(255,0,120,0.6);
+animation:fade 2s;
+}
+
+p{
+margin-bottom:18px;
+opacity:0;
+transform:translateY(30px);
+transition:all 1.5s;
+}
+
+p.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.highlight{
+text-align:center;
+font-size:30px;
+color:#ff80bf;
+text-shadow:0 0 25px #ff4da6;
+margin:40px 0;
+}
+
+.dedication{
+margin-top:60px;
+text-align:center;
+font-size:24px;
+color:#ff9acb;
+text-shadow:0 0 20px #ff4da6;
+line-height:1.6;
+}
+
+.signature{
+margin-top:40px;
+text-align:right;
+font-size:22px;
+color:#ff80bf;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<script>
+
+/* ROSAS */
+
+for(let i=0;i<40;i++){
+let petal=document.createElement("div")
+petal.className="petal"
+petal.innerHTML="🌹"
+petal.style.left=Math.random()*100+"%"
+petal.style.animationDuration=(7+Math.random()*7)+"s"
+document.body.appendChild(petal)
+}
+
+/* CORAZONES */
+
+for(let i=0;i<20;i++){
+let heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML="💖"
+heart.style.left=Math.random()*100+"%"
+heart.style.animationDuration=(12+Math.random()*12)+"s"
+document.body.appendChild(heart)
+}
+
+</script>
+
+<div class="intro" id="intro">
+
+<div class="title">
+Para la mujer que ilumina mi vida
+</div>
+
+<div class="subtitle">
+Una carta escrita con todo mi corazón
+</div>
+
+<button onclick="openEnvelope()">💌 Abrir mi carta</button>
+
+</div>
+
+<div class="envelope" id="envelope">
+<div class="envelopeBox"></div>
+</div>
+
+<div class="letter" id="letter">
+
+<p>Mi amor,</p>
+
+<p>Esta noche no quería que pasara sin decirte algo que nace desde lo más profundo de mi corazón. Hoy es un día especial, pero más especial aún es que existas tú, que estés en mi vida, que seas esa mujer que con solo una sonrisa puede cambiar completamente mi mundo.</p>
+
+<p>A veces me pregunto cómo tuve tanta suerte de encontrarte. Entre tantas personas, entre tantos caminos posibles, la vida decidió que nuestros pasos se cruzaran. Y desde ese momento, algo en mí cambió para siempre. Porque tú no eres solo alguien que amo… tú eres alguien que se volvió parte de mí.</p>
+
+<p>Eres esa persona que hace que mis días tengan más luz, que mis pensamientos tengan más calma y que mi corazón tenga un motivo constante para latir con más fuerza.</p>
+
+<p>Me encanta todo de ti. Tu forma de ser, tu manera de mirar el mundo, tu sensibilidad, tu fuerza, tu belleza que no solo está en lo que se ve, sino en lo que eres por dentro.</p>
+
+<p>Hoy, en este día dedicado a las mujeres, quiero recordarte algo: eres increíble. Eres fuerte, especial, valiosa y absolutamente única.</p>
+
+<div class="highlight">Te amo profundamente.</div>
+
+<p>Quiero seguir caminando contigo, seguir descubriendo nuevas razones para enamorarme más cada día y seguir construyendo recuerdos que algún día miraremos atrás con una sonrisa.</p>
+
+<p>Quiero estar contigo en los días felices, pero también en los difíciles. Apoyarte cuando lo necesites, abrazarte cuando te sientas cansada y celebrar cada uno de tus sueños como si fueran míos.</p>
+
+<p>Porque amar no es solo decirlo… es elegir a la misma persona todos los días.</p>
+
+<p>Y yo te elijo a ti.</p>
+
+<p>Hoy, mañana y cada día que venga.</p>
+
+<p>Feliz día de la mujer, mi amor.</p>
+
+<p>Pero sobre todo… gracias por ser tú.</p>
+
+<div class="dedication">
+Si algún día el universo escribiera la historia más hermosa de amor,  
+estoy seguro de que comenzaría exactamente igual que la nuestra:  
+con dos personas que se acercaron por casualidad  
+y terminaron descubriendo que estaban destinadas a amarse.
+</div>
+
+<div class="signature">
+Con todo mi amor ❤️
+  <p><STRONG>JUAN KALETH MENDOZA PRIMERA </STRONG></p>
+</div>
+
+</div>
+
+<script>
+
+function openEnvelope(){
+
+document.getElementById("intro").style.display="none"
+
+let env=document.getElementById("envelope")
+
+env.style.display="flex"
+
+setTimeout(()=>{
+env.style.display="none"
+document.getElementById("letter").style.display="block"
+window.scrollTo(0,0)
+showText()
+},2000)
+
+}
+
+function showText(){
+let paragraphs=document.querySelectorAll("p")
+
+let observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
+}
+})
+})
+
+paragraphs.forEach(p=>{
+observer.observe(p)
+})
+
+}
+
+</script>
+
+</body>
+</html>
