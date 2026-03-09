@@ -4,17 +4,20 @@
 <meta charset="UTF-8">
 <title>Para Ti ❤️</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+
 <style>
 
 body{
 margin:0;
-font-family:'Georgia',serif;
-background:radial-gradient(circle at top,#1a001a,#000);
+font-family:'Playfair Display',serif;
+background:radial-gradient(circle at top,#140014,#000);
 color:white;
 overflow-x:hidden;
+cursor: url("https://cur.cursors-4u.net/hearts/hea-1/hea105.cur"), auto;
 }
 
-/* ESTRELLAS */
+/* CIELO ESTRELLADO */
 
 .stars{
 position:fixed;
@@ -23,26 +26,26 @@ height:100%;
 background:url("https://www.transparenttextures.com/patterns/stardust.png");
 opacity:0.6;
 animation:starsMove 80s linear infinite;
-z-index:-1;
+z-index:-2;
 }
 
 @keyframes starsMove{
 from{transform:translateY(0)}
-to{transform:translateY(-1200px)}
+to{transform:translateY(-1000px)}
 }
 
-/* PETALOS */
+/* ROSAS */
 
-.petal{
+.rose{
 position:fixed;
-top:-10px;
+top:-20px;
 font-size:22px;
 animation:fall linear infinite;
 opacity:0.9;
 }
 
 @keyframes fall{
-0%{transform:translateY(-10px) rotate(0deg)}
+0%{transform:translateY(-20px) rotate(0)}
 100%{transform:translateY(110vh) rotate(360deg)}
 }
 
@@ -61,6 +64,16 @@ opacity:0.6;
 100%{transform:translateY(-120vh)}
 }
 
+/* PLUMAS */
+
+.feather{
+position:fixed;
+top:-10px;
+font-size:18px;
+animation:fall 18s linear infinite;
+opacity:0.4;
+}
+
 /* INTRO */
 
 .intro{
@@ -73,24 +86,16 @@ text-align:center;
 }
 
 .title{
-font-size:50px;
-color:#ff4da6;
-text-shadow:
-0 0 10px #ff4da6,
-0 0 25px #ff4da6,
-0 0 50px #ff1a8c;
+font-family:'Great Vibes',cursive;
+font-size:60px;
+color:#ff6fb5;
+text-shadow:0 0 10px #ff6fb5,0 0 30px #ff2a95;
 opacity:0;
 animation:neon 3s forwards;
 }
 
 @keyframes neon{
 to{opacity:1}
-}
-
-.subtitle{
-margin-top:15px;
-font-size:20px;
-opacity:0.8;
 }
 
 button{
@@ -108,7 +113,7 @@ transition:0.3s;
 
 button:hover{
 transform:scale(1.1);
-box-shadow:0 0 40px #ff4da6;
+box-shadow:0 0 45px #ff4da6;
 }
 
 /* SOBRE */
@@ -118,7 +123,6 @@ display:none;
 justify-content:center;
 align-items:center;
 height:100vh;
-animation:fade 2s;
 }
 
 .envelopeBox{
@@ -136,7 +140,7 @@ top:0;
 left:0;
 border-left:125px solid transparent;
 border-right:125px solid transparent;
-border-bottom:85px solid #ff80bf;
+border-bottom:85px solid #ff8cc8;
 }
 
 /* CARTA */
@@ -144,22 +148,21 @@ border-bottom:85px solid #ff80bf;
 .letter{
 display:none;
 max-width:900px;
-margin:auto;
+margin:60px auto;
 padding:70px;
 line-height:1.9;
 font-size:20px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-border-radius:25px;
-box-shadow:0 0 45px rgba(255,0,120,0.6);
+background:rgba(255,240,240,0.9);
+color:#4a0032;
+border-radius:20px;
+box-shadow:0 0 40px rgba(255,0,120,0.6);
 animation:fade 2s;
 }
 
 p{
-margin-bottom:18px;
 opacity:0;
 transform:translateY(30px);
-transition:all 1.5s;
+transition:all 1.3s;
 }
 
 p.visible{
@@ -169,13 +172,14 @@ transform:translateY(0);
 
 .highlight{
 text-align:center;
-font-size:30px;
-color:#ff80bf;
-text-shadow:0 0 25px #ff4da6;
+font-size:28px;
+color:#d40072;
+text-shadow:0 0 10px #ff7cc7;
 margin:40px 0;
+font-weight:bold;
 }
 
-.dedication{
+  .dedication{
 margin-top:60px;
 text-align:center;
 font-size:24px;
@@ -184,11 +188,30 @@ text-shadow:0 0 20px #ff4da6;
 line-height:1.6;
 }
 
+  
 .signature{
 margin-top:40px;
 text-align:right;
-font-size:22px;
-color:#ff80bf;
+font-family:'Great Vibes',cursive;
+font-size:32px;
+color:#b30059;
+}
+
+/* FINAL */
+
+.final{
+text-align:center;
+font-family:'Great Vibes',cursive;
+font-size:45px;
+margin-top:80px;
+color:#ff4da6;
+opacity:0;
+animation:fadeFinal 6s forwards;
+animation-delay:4s;
+}
+
+@keyframes fadeFinal{
+to{opacity:1}
 }
 
 @keyframes fade{
@@ -207,37 +230,41 @@ to{opacity:1}
 
 /* ROSAS */
 
-for(let i=0;i<40;i++){
-let petal=document.createElement("div")
-petal.className="petal"
-petal.innerHTML="🌹"
-petal.style.left=Math.random()*100+"%"
-petal.style.animationDuration=(7+Math.random()*7)+"s"
-document.body.appendChild(petal)
+for(let i=0;i<35;i++){
+let r=document.createElement("div")
+r.className="rose"
+r.innerHTML="🌹"
+r.style.left=Math.random()*100+"%"
+r.style.animationDuration=(7+Math.random()*7)+"s"
+document.body.appendChild(r)
 }
 
 /* CORAZONES */
 
 for(let i=0;i<20;i++){
-let heart=document.createElement("div")
-heart.className="heart"
-heart.innerHTML="💖"
-heart.style.left=Math.random()*100+"%"
-heart.style.animationDuration=(12+Math.random()*12)+"s"
-document.body.appendChild(heart)
+let h=document.createElement("div")
+h.className="heart"
+h.innerHTML="💖"
+h.style.left=Math.random()*100+"%"
+h.style.animationDuration=(10+Math.random()*10)+"s"
+document.body.appendChild(h)
+}
+
+/* PLUMAS */
+
+for(let i=0;i<10;i++){
+let f=document.createElement("div")
+f.className="feather"
+f.innerHTML="🕊"
+f.style.left=Math.random()*100+"%"
+document.body.appendChild(f)
 }
 
 </script>
 
 <div class="intro" id="intro">
 
-<div class="title">
-Para la mujer que ilumina mi vida
-</div>
-
-<div class="subtitle">
-Una carta escrita con todo mi corazón
-</div>
+<div class="title">Una carta para ti</div>
 
 <button onclick="openEnvelope()">💌 Abrir mi carta</button>
 
@@ -249,56 +276,80 @@ Una carta escrita con todo mi corazón
 
 <div class="letter" id="letter">
 
-<p>Mi amor,</p>
+<p><b>Mi amor,</b></p>
 
 <p>Esta noche no quería que pasara sin decirte algo que nace desde lo más profundo de mi corazón. Hoy es un día especial, pero más especial aún es que existas tú, que estés en mi vida, que seas esa mujer que con solo una sonrisa puede cambiar completamente mi mundo.</p>
 
-<p>A veces me pregunto cómo tuve tanta suerte de encontrarte. Entre tantas personas, entre tantos caminos posibles, la vida decidió que nuestros pasos se cruzaran. Y desde ese momento, algo en mí cambió para siempre. Porque tú no eres solo alguien que amo… tú eres alguien que se volvió parte de mí.</p>
+<p>A veces me pregunto cómo tuve tanta suerte de encontrarte. Entre tantas personas, entre tantos caminos posibles, la vida decidió que nuestros pasos se cruzaran.</p>
+
+<p>Desde ese momento algo en mí cambió para siempre. Porque tú no eres solo alguien que amo… tú eres alguien que se volvió parte de mí.</p>
 
 <p>Eres esa persona que hace que mis días tengan más luz, que mis pensamientos tengan más calma y que mi corazón tenga un motivo constante para latir con más fuerza.</p>
 
-<p>Me encanta todo de ti. Tu forma de ser, tu manera de mirar el mundo, tu sensibilidad, tu fuerza, tu belleza que no solo está en lo que se ve, sino en lo que eres por dentro.</p>
+<p>Me encanta todo de ti. Tu forma de ser, tu manera de mirar el mundo, tu sensibilidad, tu fuerza y esa belleza que no solo está en lo que se ve, sino en lo que eres por dentro.</p>
 
-<p>Hoy, en este día dedicado a las mujeres, quiero recordarte algo: eres increíble. Eres fuerte, especial, valiosa y absolutamente única.</p>
+<p>Quiero que sepas algo que tal vez no te digo lo suficiente: eres increíble. Eres fuerte, especial, valiosa y absolutamente única.</p>
 
-<div class="highlight">Te amo profundamente.</div>
+<p>Pero más allá de cualquier día o cualquier fecha quiero que sepas algo que nace desde lo más sincero de mi corazón:</p>
 
-<p>Quiero seguir caminando contigo, seguir descubriendo nuevas razones para enamorarme más cada día y seguir construyendo recuerdos que algún día miraremos atrás con una sonrisa.</p>
+<div class="highlight">amarte se ha convertido en una de las cosas más hermosas que me han pasado en la vida.</div>
 
-<p>Quiero estar contigo en los días felices, pero también en los difíciles. Apoyarte cuando lo necesites, abrazarte cuando te sientas cansada y celebrar cada uno de tus sueños como si fueran míos.</p>
+<p>Porque cuando estoy contigo, todo parece tener más sentido.</p>
 
-<p>Porque amar no es solo decirlo… es elegir a la misma persona todos los días.</p>
+<p>Las conversaciones se vuelven más interesantes. Las risas más sinceras. Los momentos más inolvidables.</p>
 
-<p>Y yo te elijo a ti.</p>
+<p>Incluso los días difíciles se sienten más fáciles si estás a mi lado.</p>
+
+<p>Hay algo mágico en nosotros, algo que no sé explicar con lógica, pero que siento con toda mi alma.</p>
+
+<p>Es como si el universo hubiera decidido juntar dos historias para que caminaran juntas.</p>
+
+<p>Y yo quiero seguir caminando contigo.</p>
+
+<p>Quiero seguir conociendo cada parte de ti, seguir descubriendo nuevas razones para enamorarme más cada día.</p>
+
+<p>Quiero estar contigo en los días felices, pero también en los difíciles.</p>
+
+<p>Porque cuando amas de verdad a alguien, su felicidad se vuelve parte de la tuya.</p>
+
+<p>Esta noche solo quiero agradecer por ti.</p>
+
+<p>Eres inspiración. Eres alegría. Eres ternura. Eres amor.</p>
+
+<div class="highlight">te amo profundamente.</div>
+
+<p>Te amo por quien eres. Por tu esencia. Por tu manera de existir.</p>
+
+<p>Y te prometo algo desde lo más sincero de mi alma: seguir cuidando este amor y seguir eligiéndote todos los días.</p>
 
 <p>Hoy, mañana y cada día que venga.</p>
 
-<p>Feliz día de la mujer, mi amor.</p>
+<p>Gracias por existir en mi vida.</p>
 
-<p>Pero sobre todo… gracias por ser tú.</p>
+<p>Gracias por iluminar mis días.</p>
 
-<div class="dedication">
+<p>Y gracias por convertir algo tan simple como el amor… en lo más extraordinario que me ha pasado.</p>
+
+  <div class="dedication">
 Si algún día el universo escribiera la historia más hermosa de amor,  
 estoy seguro de que comenzaría exactamente igual que la nuestra:  
 con dos personas que se acercaron por casualidad  
 y terminaron descubriendo que estaban destinadas a amarse.
+  </div>
+  
+<div class="signature">Con todo mi amor<p><STRONG>JUAN KALETH MENDOZA PRIMERA </STRONG></p>
 </div>
 
-<div class="signature">
-Con todo mi amor ❤️
-  <p><STRONG>JUAN KALETH MENDOZA PRIMERA </STRONG></p>
-</div>
+
+<div class="final">Para siempre tú y yo 💖</div>
 
 </div>
 
 <script>
 
 function openEnvelope(){
-
 document.getElementById("intro").style.display="none"
-
 let env=document.getElementById("envelope")
-
 env.style.display="flex"
 
 setTimeout(()=>{
@@ -307,7 +358,6 @@ document.getElementById("letter").style.display="block"
 window.scrollTo(0,0)
 showText()
 },2000)
-
 }
 
 function showText(){
@@ -324,7 +374,6 @@ entry.target.classList.add("visible")
 paragraphs.forEach(p=>{
 observer.observe(p)
 })
-
 }
 
 </script>
