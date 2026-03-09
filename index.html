@@ -98,27 +98,40 @@ animation:neon 3s forwards;
 to{opacity:1}
 }
 
-  .nameTitle{
-font-family:'Playfair Display',serif;
-font-size:26px;
-margin-top:10px;
-color:#e3d5ff;
-letter-spacing:1px;
-text-shadow:0 0 8px #7a3cff;
-opacity:0;
-animation:fadeName 4s forwards;
-animation-delay:2s;
-}
-
-@keyframes fadeName{
-to{opacity:1}
-}
-  .specialName{
-font-family:'Great Vibes',cursive;
-font-size:34px;
-color:#caa8ff;
-text-shadow:0 0 15px #7a3cff;
+  #nameTitle{
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    margin-top: 10px;
+    
+    background: linear-gradient(
+        90deg,
+        #6a00ff,
+        #b266ff,
+        #ffffff,
+        #b266ff,
+        #6a00ff
+    );
+    
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: metallicPurple 5s linear infinite;
+    
+    text-shadow:
+        0 0 5px rgba(178,102,255,0.8),
+        0 0 10px rgba(138,43,226,0.7),
+        0 0 20px rgba(106,0,255,0.6);
   }
+  @keyframes metallicPurple {
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 300%;
+    }
+  } 
+  
 button{
 margin-top:40px;
 padding:16px 45px;
@@ -283,7 +296,7 @@ document.body.appendChild(f)
 
 <div class="intro" id="intro">
 
-<div class="title">Para la mujer que ilumina mi vida, <strong class="nameTitle">VALERIA PETRO VILLAZÓN</strong></div>
+<div class="title">Para la mujer que ilumina mi vida, <p><strong class="nameTitle">VALERIA PETRO VILLAZÓN</strong></p></div>
 
 <button onclick="openEnvelope()">💌 Abrir la carta</button>
 
@@ -356,7 +369,7 @@ Si algún día el universo escribiera la historia más hermosa de amor,
 estoy seguro de que comenzaría exactamente igual que la nuestra:  
 con dos personas que se acercaron por casualidad  
 y terminaron descubriendo que estaban destinadas a amarse;
-<div class="final">POUR TOUJOURS, TOI ET MOI, <strong class="specialName">VALERIA PETRO VILLAZÓN</strong> ET <strong class="specialName">JUAN K MENDOZA PRIMERA</strong> 💜 - PARA SIEMPRE TU Y YO, <strong class="specialName">VALERIA PETRO VILLAZÓN</strong> Y <strong class="specialName">JUAN K MENDOZA PRIMERA</strong> 💜</div>
+<div class="final">POUR TOUJOURS, TOI ET MOI, <strong class="nameTitle">VALERIA PETRO VILLAZÓN</strong> ET <strong class="nameTitle">JUAN K MENDOZA PRIMERA</strong> 💜 - PARA SIEMPRE TU Y YO, <strong class="nameTitle">VALERIA PETRO VILLAZÓN</strong> Y <strong class="nameTitle">JUAN K MENDOZA PRIMERA</strong> 💜</div>
 
 </div>
 
